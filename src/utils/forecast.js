@@ -10,7 +10,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('error returned by weather service: ', body.error)
         } else {
             const { temperature, precipProbability } = body.currently
-            callback(undefined, 'Temperature is ' + temperature + ' and rain probability is ' + precipProbability)
+            callback(undefined, 'Temperature is ' + temperature + ' and rain probability is ' + precipProbability + ' and summary is ' + body.daily.data[0].summary)
         }
     })
 }
